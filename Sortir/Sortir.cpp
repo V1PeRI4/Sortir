@@ -90,19 +90,19 @@ void createBuyer(Buyer(&obj))
 {
 	setlocale(LC_ALL, "Russian");
 
-	cout << "Введите Имя" << endl;
+	cout << "Введите Имя: ";
 	cin >> obj.name;
 
-	cout << "Введите Фамилию" << endl;
+	cout << "Введите Фамилию: ";
 	cin >> obj.surname;
 
-	cout << "Введите Отчество" << endl;
+	cout << "Введите Отчество: ";
 	cin >> obj.fathersname;
 
-	cout << "Введите адрес" << endl;
+	cout << "Введите адрес: ";
 	cin >> obj.adress;
 
-	cout << "Введите дату учета" << endl;
+	cout << "Введите дату учета: ";
 	cin >> obj.dateofdeal;
 
 
