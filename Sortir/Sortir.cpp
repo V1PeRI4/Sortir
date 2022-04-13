@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <clocale>
 #include <Windows.h>
+#include <list>
 using namespace std;
 
 struct Buyer
@@ -39,6 +40,37 @@ int main()
 	}
 	setlocale(LC_ALL, "Russian");
 
+	//Sort
+	int tempNum;
+	char tempChar[128];
+
+	Buyer* Temp;
+	Temp = new Buyer[arrayLength];
+
+	int indexofequal;
+
+	for (int i = 0; i < arrayLength; i++)
+	{
+		if (Buyers[i].name == Buyers[i + 1].name)
+		{
+			if (Buyers[i].adress == Buyers[i + 1].adress)
+			{
+				indexofequal = i + 1;
+			}
+		}
+	}
+
+	for (int i = 0; i < arrayLength; i++)
+	{
+		if (i != indexofequal)
+		{
+			Temp[i] = Buyers[i];
+		}
+		else
+		{
+			continue;
+		}
+	}
 	cout << R"(
 ______                             _ _     _   
 | ___ \                           | (_)   | |  
@@ -50,8 +82,8 @@ ______                             _ _     _
              |___/                             
 )" << '\n';
 
-	for (int i = 0; i < arrayLength; i++)
-		printBuyers(Buyers[i]);
+	for (int i = 0; i < arrayLength - 1; i++)
+		printBuyers(Temp[i]);
 }
 
 void createBuyer(Buyer(&obj))
